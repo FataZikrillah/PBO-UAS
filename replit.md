@@ -31,7 +31,6 @@ View (GUI Components)
 ├── MainFrame.java
 ├── DashboardPanel.java
 ├── TransactionTablePanel.java
-├── PieChartPanel.java
 └── AddEditDialog.java
 
 Controller
@@ -60,7 +59,6 @@ Utilities
 
 3. **Visualisasi**
    - Tabel transaksi dengan warna (hijau=income, merah=expense)
-   - Pie chart distribusi cash flow bulanan
    - Format Rupiah otomatis
 
 4. **Persistensi Data**
@@ -77,9 +75,6 @@ Utilities
 │   ├── model/                   # Model layer (OOP core)
 │   ├── view/                    # View layer (GUI)
 │   └── utils/                   # Utility classes
-├── lib/                         # External libraries
-│   ├── jfreechart-1.5.4.jar    # Chart library
-│   └── jcommon-1.0.24.jar      # JFreeChart dependency
 ├── data/                        # Data storage
 │   └── transactions.txt         # Transaksi tersimpan di sini
 ├── bin/                         # Compiled .class files
@@ -112,10 +107,10 @@ java -cp "bin:lib/*" com.financeapp.MainApp
 - ✅ Setup workflow untuk Java Swing dengan VNC
 - ✅ Auto-save/load data ke file lokal
 - ✅ Dokumentasi lengkap dalam Bahasa Indonesia di semua code
-- ✅ Pie chart untuk visualisasi distribusi monthly cash flow
+- ✅ Hapus fitur pie chart visualization sesuai permintaan user
 
 ### Design Decisions
-- **Pie Chart**: Menampilkan distribusi Monthly Income vs Monthly Expense (bukan current balance) untuk menghindari double-counting. Net result (surplus/deficit) ditampilkan di dashboard.
+- **Visualisasi**: Fokus pada dashboard 4 kotak info dan tabel transaksi berwarna, tanpa chart untuk kesederhanaan.
 - **Data Storage**: File-based (txt) untuk kesederhanaan, bisa di-upgrade ke database nanti.
 - **Comment Language**: Semua comment dalam Bahasa Indonesia sesuai permintaan user.
 
@@ -129,8 +124,6 @@ java -cp "bin:lib/*" com.financeapp.MainApp
 ## 🔧 Dependencies
 
 - **Java SE**: 11 atau lebih tinggi
-- **JFreeChart**: 1.5.4 (untuk pie chart)
-- **JCommon**: 1.0.24 (dependency JFreeChart)
 
 ## 📊 Testing Status
 
@@ -145,7 +138,6 @@ java -cp "bin:lib/*" com.financeapp.MainApp
 - ⏳ Edit transaction
 - ⏳ Delete transaction
 - ⏳ Data persistence (save/load)
-- ⏳ Pie chart visualization
 - ⏳ Dashboard updates
 - ⏳ Report generation
 

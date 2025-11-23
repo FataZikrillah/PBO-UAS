@@ -6,7 +6,6 @@ Aplikasi desktop berbasis **Java Swing** untuk mengelola keuangan pribadi dengan
 
 - ✅ **Dashboard Keuangan** - 4 kotak info: Saldo, Uang Masuk, Uang Keluar, Selisih Bulanan
 - ✅ **Tabel Transaksi** - Daftar lengkap transaksi dengan warna (hijau=pemasukan, merah=pengeluaran)
-- ✅ **Pie Chart** - Visualisasi persentase keuangan
 - ✅ **Tambah/Edit/Hapus** - Kelola transaksi dengan mudah
 - ✅ **Auto-Save** - Data tersimpan otomatis ke file lokal
 - ✅ **Laporan Keuangan** - Ringkasan keuangan instant
@@ -71,15 +70,11 @@ FinancialApp/
 │   │   ├── MainFrame.java
 │   │   ├── DashboardPanel.java
 │   │   ├── TransactionTablePanel.java
-│   │   ├── PieChartPanel.java
 │   │   └── AddEditDialog.java
 │   └── utils/                    # Utility classes
 │       ├── CurrencyFormatter.java
 │       ├── DateTimeUtils.java
 │       └── FileManager.java
-├── lib/                          # External libraries
-│   ├── jfreechart-1.5.4.jar
-│   └── jcommon-1.0.24.jar
 ├── data/                         # Data storage
 │   └── transactions.txt
 └── bin/                          # Compiled classes
@@ -238,18 +233,11 @@ Expense|150000|2025-11-23 16:45:00|Belanja bulanan
 └────────────┴──────────────┴─────────────────────┴─────────────────┘
 ```
 
-### Pie Chart
-- 🟢 Uang Masuk (20.0%)
-- 🔴 Uang Keluar (12.6%)
-- 🔵 Uang Sekarang (67.3%)
-
 ## 🔧 Dependencies
 
 | Library | Version | Purpose |
 |---------|---------|---------|
 | Java SE | 11+ | Runtime |
-| JFreeChart | 1.5.4 | Pie Chart |
-| JCommon | 1.0.24 | JFreeChart Support |
 
 ## 📝 Technical Details
 
