@@ -16,7 +16,6 @@ import java.awt.event.WindowEvent;
  * Menggunakan BorderLayout untuk menyusun komponen:
  * - NORTH: Dashboard Panel (4 kotak info)
  * - CENTER: Transaction Table Panel
- * - EAST: Pie Chart Panel
  * - SOUTH: Button Panel (ADD, DELETE, EDIT, REFRESH, LAPORAN)
  */
 public class MainFrame extends JFrame {
@@ -26,7 +25,6 @@ public class MainFrame extends JFrame {
     // Komponen view
     private DashboardPanel dashboardPanel;
     private TransactionTablePanel tablePanel;
-    private PieChartPanel chartPanel;
     
     /**
      * Constructor - membuat dan setup main window
@@ -47,12 +45,10 @@ public class MainFrame extends JFrame {
         // Buat komponen
         dashboardPanel = new DashboardPanel(manager);
         tablePanel = new TransactionTablePanel(manager);
-        chartPanel = new PieChartPanel(manager);
         
         // Tambahkan komponen ke frame
         add(dashboardPanel, BorderLayout.NORTH);
         add(tablePanel, BorderLayout.CENTER);
-        add(chartPanel, BorderLayout.EAST);
         add(createButtonPanel(), BorderLayout.SOUTH);
         
         // Auto-save saat window ditutup
@@ -228,6 +224,5 @@ public class MainFrame extends JFrame {
     private void refreshAll() {
         dashboardPanel.updateDashboard();
         tablePanel.refreshTable();
-        chartPanel.updateChart();
     }
 }
