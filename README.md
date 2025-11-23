@@ -87,19 +87,95 @@ FinancialApp/
 
 ## 🚀 Cara Menjalankan
 
-### Di Replit (Otomatis)
+### Opsi 1: Di Replit (Otomatis)
 1. Klik tombol **Run** di atas
 2. Aplikasi akan otomatis compile dan berjalan
 3. GUI muncul di VNC viewer
 
-### Manual Compile & Run
-```bash
-# Compile
-javac -cp ".:lib/*" -d bin src/com/financeapp/*.java src/com/financeapp/*/*.java
+### Opsi 2: Clone dan Jalankan di Laptop/Komputer Windows
 
-# Run
+#### Langkah 1: Clone Repository
+```bash
+# Clone repository ke komputer Anda
+git clone <URL_REPOSITORY_INI>
+cd <NAMA_FOLDER>
+```
+
+Atau **Download ZIP**:
+1. Klik tombol "Download ZIP" di repository
+2. Extract file ZIP ke folder yang diinginkan
+3. Buka Command Prompt/Terminal di folder tersebut
+
+#### Langkah 2: Pastikan Java Terinstal
+```bash
+# Cek versi Java (minimal Java 11)
+java -version
+javac -version
+```
+
+**Jika Java belum terinstal:**
+1. Download Java JDK dari https://www.oracle.com/java/technologies/downloads/
+2. Install Java JDK
+3. Set PATH environment variable (biasanya otomatis)
+
+#### Langkah 3: Compile Aplikasi
+
+**Di Windows (Command Prompt/PowerShell):**
+```cmd
+javac -cp ".;lib/*" -d bin src/com/financeapp/*.java src/com/financeapp/model/*.java src/com/financeapp/view/*.java src/com/financeapp/utils/*.java
+```
+
+**Di Linux/Mac (Terminal):**
+```bash
+javac -cp ".:lib/*" -d bin src/com/financeapp/*.java src/com/financeapp/model/*.java src/com/financeapp/view/*.java src/com/financeapp/utils/*.java
+```
+
+#### Langkah 4: Jalankan Aplikasi
+
+**Di Windows:**
+```cmd
+java -cp "bin;lib/*" com.financeapp.MainApp
+```
+
+**Di Linux/Mac:**
+```bash
 java -cp "bin:lib/*" com.financeapp.MainApp
 ```
+
+#### Langkah 5: Gunakan Aplikasi
+- GUI akan muncul secara otomatis
+- Mulai tambahkan transaksi keuangan Anda!
+
+### Opsi 3: Jalankan dengan IDE (NetBeans/IntelliJ/Eclipse)
+
+#### NetBeans:
+1. Buka NetBeans
+2. File → Open Project → Pilih folder project ini
+3. Klik kanan pada project → Properties → Libraries
+4. Add JAR/Folder → Tambahkan `lib/jfreechart-1.5.4.jar` dan `lib/jcommon-1.0.24.jar`
+5. Klik kanan `MainApp.java` → Run File
+
+#### IntelliJ IDEA:
+1. Buka IntelliJ IDEA
+2. File → Open → Pilih folder project ini
+3. File → Project Structure → Libraries
+4. Klik + → Java → Pilih folder `lib` → OK
+5. Klik kanan `MainApp.java` → Run 'MainApp.main()'
+
+#### Eclipse:
+1. Buka Eclipse
+2. File → Import → Existing Projects into Workspace
+3. Pilih folder project ini → Finish
+4. Klik kanan project → Build Path → Configure Build Path
+5. Libraries → Add External JARs → Tambahkan semua .jar di folder `lib`
+6. Klik kanan `MainApp.java` → Run As → Java Application
+
+#### VS Code:
+1. Buka VS Code
+2. Install Extension Pack for Java
+3. Open Folder → Pilih folder project ini
+4. VS Code akan otomatis detect project Java
+5. Klik Run pada `MainApp.java`
 
 ## 📖 Cara Menggunakan
 
