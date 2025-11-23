@@ -34,15 +34,11 @@ FinancialApp/
 │   │   ├── MainFrame.java             ✅ SELESAI
 │   │   ├── DashboardPanel.java        ✅ SELESAI
 │   │   ├── TransactionTablePanel.java ✅ SELESAI
-│   │   ├── PieChartPanel.java         ✅ SELESAI
 │   │   └── AddEditDialog.java         ✅ SELESAI
 │   └── utils/
 │       ├── CurrencyFormatter.java     ✅ SELESAI
 │       ├── DateTimeUtils.java         ✅ SELESAI
 │       └── FileManager.java           ✅ SELESAI
-├── lib/
-│   ├── jfreechart-1.5.4.jar           ✅ DOWNLOADED
-│   └── jcommon-1.0.24.jar             ✅ DOWNLOADED
 ├── data/
 │   └── transactions.txt               ✅ (Akan dibuat otomatis)
 └── bin/                                ✅ (Compiled classes)
@@ -174,12 +170,6 @@ FinancialApp/
 - ✅ Warna hijau untuk pemasukan, merah untuk pengeluaran
 - ✅ Sortable columns
 - ✅ Selection mode single row
-
-### Pie Chart
-- ✅ Visualisasi persentase keuangan
-- ✅ 3 kategori: Uang Masuk, Keluar, Sekarang
-- ✅ Legend dan tooltips
-- ✅ Update otomatis
 
 ### Tombol Aksi
 - ✅ **TAMBAH** - Dialog tambah transaksi baru
@@ -341,8 +331,6 @@ Tidak ada known issues saat ini. Aplikasi berjalan dengan baik.
 
 | Library | Version | Purpose |
 |---------|---------|---------|
-| JFreeChart | 1.5.4 | Pie chart visualization |
-| JCommon | 1.0.24 | JFreeChart dependency |
 | Java SE | 11+ | Runtime environment |
 
 ---
@@ -507,22 +495,12 @@ Tidak ada known issues saat ini. Aplikasi berjalan dengan baik.
 
 ---
 
-### Tahap 5: Implementasi View Layer - Chart & Dialog (23 Nov 2025, 09:20-09:35)
+### Tahap 5: Implementasi View Layer - Dialog (23 Nov 2025, 09:20-09:35)
 **Status**: ✅ Selesai
 
 **Yang Dikerjakan:**
 
-**5.1. PieChartPanel.java**
-- ✅ Menggunakan JFreeChart library
-- ✅ Create DefaultPieDataset
-- ✅ Method `updateChart()` - update pie chart
-- ✅ Menampilkan: Monthly Income vs Monthly Expense
-- ✅ Persentase otomatis dihitung
-- ✅ Legend dan tooltips
-- ✅ Fix bug: menggunakan nilai absolut untuk avoid double-counting
-- ✅ Comment lengkap dalam Bahasa Indonesia
-
-**5.2. AddEditDialog.java**
+**5.1. AddEditDialog.java**
 - ✅ JDialog modal untuk Add dan Edit
 - ✅ Form input:
   - JComboBox: Tipe (Pemasukan/Pengeluaran)
@@ -538,7 +516,6 @@ Tidak ada known issues saat ini. Aplikasi berjalan dengan baik.
 - ✅ Comment lengkap dalam Bahasa Indonesia
 
 **Hasil:**
-- ✅ Visualisasi pie chart menampilkan distribusi keuangan
 - ✅ Dialog input user-friendly dengan validasi
 - ✅ Tidak ada input invalid yang bisa masuk
 
@@ -553,7 +530,6 @@ Tidak ada known issues saat ini. Aplikasi berjalan dengan baik.
 - ✅ BorderLayout untuk layout utama
 - ✅ NORTH: DashboardPanel
 - ✅ CENTER: TransactionTablePanel
-- ✅ EAST: PieChartPanel
 - ✅ SOUTH: Button Panel dengan 5 tombol
 - ✅ Tombol TAMBAH - buka AddEditDialog untuk transaksi baru
 - ✅ Tombol HAPUS - hapus transaksi terpilih dengan konfirmasi
@@ -590,14 +566,12 @@ Tidak ada known issues saat ini. Aplikasi berjalan dengan baik.
 - ✅ Resolve dependency JFreeChart
 - ✅ Check classpath Windows vs Linux
 
-**7.2. Bug Fixing - PieChart**
-- ❌ Bug 1: Pie chart kosong saat expense-only (balance negatif)
-- ✅ Fix: Gunakan nilai absolut untuk total calculation
-- ❌ Bug 2: Label "Uang Sekarang" muncul untuk balance negatif
-- ✅ Fix: Cek sign balance, tampilkan "Defisit" jika negatif
-- ❌ Bug 3: Double-counting - expense dan balance ditampilkan bersamaan
-- ✅ Fix: Ubah konsep pie chart - hanya tampilkan Monthly Income vs Monthly Expense
-- ✅ Net result (surplus/deficit) ditampilkan di Dashboard, bukan di chart
+**7.2. User Request**
+- ✅ User meminta hapus fitur pie chart visualization
+- ✅ Hapus file PieChartPanel.java
+- ✅ Update MainFrame.java - hapus referensi ke pie chart
+- ✅ Compile ulang tanpa error
+- ✅ Aplikasi fokus pada dashboard dan tabel untuk kesederhanaan
 
 **7.3. Setup Workflow**
 - ✅ Setup workflow "Run Java Finance App"
@@ -680,11 +654,11 @@ Tidak ada known issues saat ini. Aplikasi berjalan dengan baik.
 | 2. Model Layer | ~15 menit | ✅ Selesai |
 | 3. Utility Layer | ~10 menit | ✅ Selesai |
 | 4. View Layer (Dashboard & Table) | ~15 menit | ✅ Selesai |
-| 5. View Layer (Chart & Dialog) | ~15 menit | ✅ Selesai |
+| 5. View Layer (Dialog) | ~10 menit | ✅ Selesai |
 | 6. Main Frame & Application | ~10 menit | ✅ Selesai |
-| 7. Testing & Bug Fixing | ~10 menit | ✅ Selesai |
+| 7. Testing & Revisi | ~10 menit | ✅ Selesai |
 | 8. Dokumentasi | ~15 menit | ✅ Selesai |
-| **TOTAL** | **~95 menit** | **✅ 100% Selesai** |
+| **TOTAL** | **~85 menit** | **✅ 100% Selesai** |
 
 ---
 
@@ -698,6 +672,6 @@ Jika ada pertanyaan atau bug, silakan hubungi developer atau buat issue di repos
 **Version**: 1.0.0  
 **Status**: Production Ready ✅
 
-**Total Files**: 13 Java files + 3 Markdown docs + 2 JAR libraries = 18 files  
-**Total Lines of Code**: ~1,500 baris (termasuk comment)  
+**Total Files**: 12 Java files + 4 Markdown docs = 16 files  
+**Total Lines of Code**: ~1,400 baris (termasuk comment)  
 **Comment Coverage**: 100% (setiap class, method, dan fungsi ada comment Bahasa Indonesia)

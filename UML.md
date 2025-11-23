@@ -94,7 +94,6 @@ classDiagram
         -FinanceManager financeManager
         -DashboardPanel dashboardPanel
         -TransactionTablePanel tablePanel
-        -PieChartPanel chartPanel
         +MainFrame()
         -initComponents() void
         -addButtonPanel() void
@@ -123,14 +122,6 @@ classDiagram
         +TransactionTablePanel(financeManager)
         +refreshTable() void
         +getSelectedRow() int
-    }
-    
-    class PieChartPanel {
-        -FinanceManager financeManager
-        -DefaultPieDataset dataset
-        -ChartPanel chartPanel
-        +PieChartPanel(financeManager)
-        +updateChart() void
     }
     
     class AddEditDialog {
@@ -184,12 +175,10 @@ classDiagram
     MainFrame "1" *-- "1" FinanceManager : manages
     MainFrame "1" *-- "1" DashboardPanel : contains
     MainFrame "1" *-- "1" TransactionTablePanel : contains
-    MainFrame "1" *-- "1" PieChartPanel : contains
     
     %% Relationships - Association
     DashboardPanel --> FinanceManager : uses
     TransactionTablePanel --> FinanceManager : uses
-    PieChartPanel --> FinanceManager : uses
     AddEditDialog --> Transaction : creates
     MainFrame --> AddEditDialog : uses
     
@@ -275,9 +264,8 @@ graph TD
     User --> UC3[Delete Transaction]
     User --> UC4[View Dashboard]
     User --> UC5[View Transaction List]
-    User --> UC6[View Pie Chart]
-    User --> UC7[Generate Report]
-    User --> UC8[Refresh Data]
+    User --> UC6[Generate Report]
+    User --> UC7[Refresh Data]
     
     UC1 --> Validate[Validate Input]
     UC2 --> Validate
@@ -311,7 +299,7 @@ graph TD
 
 ### MVC (Model-View-Controller)
 - **Model**: Transaction, Income, Expense, FinanceManager
-- **View**: MainFrame, DashboardPanel, TransactionTablePanel, PieChartPanel, AddEditDialog
+- **View**: MainFrame, DashboardPanel, TransactionTablePanel, AddEditDialog
 - **Controller**: FinanceManager mengelola logic, MainFrame mengelola interaksi user
 
 ### Singleton Pattern (Implicit)
