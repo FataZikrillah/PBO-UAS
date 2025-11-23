@@ -115,26 +115,21 @@ javac -version
 
 #### Langkah 3: Compile Aplikasi
 
-**Di Windows (Command Prompt/PowerShell):**
-```cmd
-javac -cp ".;lib/*" -d bin src/com/financeapp/*.java src/com/financeapp/model/*.java src/com/financeapp/view/*.java src/com/financeapp/utils/*.java
-```
-
-**Di Linux/Mac (Terminal):**
+**Di Windows, Linux, atau Mac (Command Prompt/Terminal):**
 ```bash
-javac -cp ".:lib/*" -d bin src/com/financeapp/*.java src/com/financeapp/model/*.java src/com/financeapp/view/*.java src/com/financeapp/utils/*.java
+javac -d bin src/com/financeapp/*.java src/com/financeapp/model/*.java src/com/financeapp/view/*.java src/com/financeapp/utils/*.java
 ```
 
 #### Langkah 4: Jalankan Aplikasi
 
 **Di Windows:**
 ```cmd
-java -cp "bin;lib/*" com.financeapp.MainApp
+java -cp bin com.financeapp.MainApp
 ```
 
 **Di Linux/Mac:**
 ```bash
-java -cp "bin:lib/*" com.financeapp.MainApp
+java -cp bin com.financeapp.MainApp
 ```
 
 #### Langkah 5: Gunakan Aplikasi
@@ -146,24 +141,18 @@ java -cp "bin:lib/*" com.financeapp.MainApp
 #### NetBeans:
 1. Buka NetBeans
 2. File → Open Project → Pilih folder project ini
-3. Klik kanan pada project → Properties → Libraries
-4. Add JAR/Folder → Tambahkan `lib/jfreechart-1.5.4.jar` dan `lib/jcommon-1.0.24.jar`
-5. Klik kanan `MainApp.java` → Run File
+3. Klik kanan `MainApp.java` → Run File
 
 #### IntelliJ IDEA:
 1. Buka IntelliJ IDEA
 2. File → Open → Pilih folder project ini
-3. File → Project Structure → Libraries
-4. Klik + → Java → Pilih folder `lib` → OK
-5. Klik kanan `MainApp.java` → Run 'MainApp.main()'
+3. Klik kanan `MainApp.java` → Run 'MainApp.main()'
 
 #### Eclipse:
 1. Buka Eclipse
 2. File → Import → Existing Projects into Workspace
 3. Pilih folder project ini → Finish
-4. Klik kanan project → Build Path → Configure Build Path
-5. Libraries → Add External JARs → Tambahkan semua .jar di folder `lib`
-6. Klik kanan `MainApp.java` → Run As → Java Application
+4. Klik kanan `MainApp.java` → Run As → Java Application
 
 #### VS Code:
 1. Buka VS Code

@@ -83,10 +83,9 @@ FinancialApp/
 ### 2. **View Layer (100% Selesai)**
 
 #### MainFrame.java
-- ✅ BorderLayout dengan 5 area (North, Center, East, South)
+- ✅ BorderLayout dengan 3 area (North, Center, South)
 - ✅ Dashboard Panel di bagian atas
 - ✅ Table Panel di tengah
-- ✅ Pie Chart Panel di kanan
 - ✅ Button Panel di bawah
 - ✅ Auto-save saat window ditutup
 - ✅ Handler untuk semua tombol (Add, Delete, Edit, Refresh, Laporan)
@@ -107,13 +106,6 @@ FinancialApp/
 - ✅ Custom renderer untuk warna (hijau=Income, merah=Expense)
 - ✅ Method `refreshTable()` untuk update data
 - ✅ Scroll pane untuk banyak data
-- ✅ **Comment lengkap dalam Bahasa Indonesia**
-
-#### PieChartPanel.java
-- ✅ Menggunakan JFreeChart library
-- ✅ Tampilan pie chart dengan 3 slice: Uang Masuk, Keluar, Sekarang
-- ✅ Persentase otomatis
-- ✅ Method `updateChart()` untuk refresh
 - ✅ **Comment lengkap dalam Bahasa Indonesia**
 
 #### AddEditDialog.java
@@ -195,20 +187,20 @@ git clone <URL_REPOSITORY>
 # 2. Masuk ke folder project
 cd <NAMA_FOLDER>
 
-# 3. Compile (Windows)
-javac -cp ".;lib/*" -d bin src/com/financeapp/*.java src/com/financeapp/model/*.java src/com/financeapp/view/*.java src/com/financeapp/utils/*.java
+# 3. Compile
+javac -d bin src/com/financeapp/*.java src/com/financeapp/model/*.java src/com/financeapp/view/*.java src/com/financeapp/utils/*.java
 
 # 4. Jalankan (Windows)
-java -cp "bin;lib/*" com.financeapp.MainApp
+java -cp bin com.financeapp.MainApp
 ```
 
-**Untuk Linux/Mac** gunakan `:` (titik dua) sebagai separator:
+**Untuk Linux/Mac** perintahnya sama:
 ```bash
 # Compile
-javac -cp ".:lib/*" -d bin src/com/financeapp/*.java src/com/financeapp/model/*.java src/com/financeapp/view/*.java src/com/financeapp/utils/*.java
+javac -d bin src/com/financeapp/*.java src/com/financeapp/model/*.java src/com/financeapp/view/*.java src/com/financeapp/utils/*.java
 
 # Run
-java -cp "bin:lib/*" com.financeapp.MainApp
+java -cp bin com.financeapp.MainApp
 ```
 
 ### Cara 3: Menggunakan IDE (NetBeans/IntelliJ/Eclipse/VS Code)

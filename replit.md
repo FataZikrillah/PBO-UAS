@@ -92,10 +92,10 @@ Utilities
 ### Manual
 ```bash
 # Compile
-javac -cp ".:lib/*" -d bin src/com/financeapp/*.java src/com/financeapp/*/*.java
+javac -d bin src/com/financeapp/*.java src/com/financeapp/*/*.java
 
 # Run
-java -cp "bin:lib/*" com.financeapp.MainApp
+java -cp bin com.financeapp.MainApp
 ```
 
 ## 📝 Recent Changes
@@ -166,3 +166,9 @@ Untuk pengembangan lebih lanjut:
 **Last Updated**: 23 November 2025
 
 Semua fitur dasar sudah selesai diimplementasikan. Aplikasi siap digunakan untuk manajemen keuangan sederhana dan sebagai contoh pembelajaran OOP dengan Java.
+
+**Revisi Terbaru** (23 Nov 2025):
+- Fitur pie chart visualization telah dihapus sesuai permintaan user
+- Aplikasi sekarang lebih sederhana dengan fokus pada dashboard dan tabel transaksi
+- Dependencies external library (JFreeChart) telah dihapus
+- Compile dan run tanpa library eksternal
