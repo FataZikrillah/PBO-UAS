@@ -1,4 +1,4 @@
-<img width="1205" height="970" alt="image" src="https://github.com/user-attachments/assets/a2090478-8531-42ca-b556-e39dcee7ea70" /># 💰 Aplikasi Manajemen Keuangan Sederhana
+💰 Aplikasi Manajemen Keuangan Sederhana
 
 Aplikasi desktop berbasis **Java Swing** untuk mengelola keuangan pribadi dengan menerapkan prinsip **Object-Oriented Programming (OOP)** secara lengkap.
 
