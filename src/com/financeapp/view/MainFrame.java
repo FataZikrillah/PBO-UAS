@@ -46,10 +46,14 @@ public class MainFrame extends JFrame {
         dashboardPanel = new DashboardPanel(manager);
         tablePanel = new TransactionTablePanel(manager);
         
+        // Buat panel gabungan untuk dashboard + tombol
+        JPanel topPanel = new JPanel(new BorderLayout(10, 10));
+        topPanel.add(dashboardPanel, BorderLayout.NORTH);
+        topPanel.add(createButtonPanel(), BorderLayout.CENTER);
+        
         // Tambahkan komponen ke frame
-        add(dashboardPanel, BorderLayout.NORTH);
+        add(topPanel, BorderLayout.NORTH);
         add(tablePanel, BorderLayout.CENTER);
-        add(createButtonPanel(), BorderLayout.SOUTH);
         
         // Auto-save saat window ditutup
         addWindowListener(new WindowAdapter() {
@@ -105,19 +109,19 @@ public class MainFrame extends JFrame {
         
         // Tombol LAPORAN
         JButton reportButton = new JButton("LAPORAN");
-        reportButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleReport();
-            }
-        });
+        // reportButton.addActionListener(new ActionListener() {
+        //     @Override
+        //     public void actionPerformed(ActionEvent e) {
+        //         handleReport();
+        //     }
+        // });
         
         // Tambahkan tombol ke panel
         panel.add(addButton);
         panel.add(deleteButton);
         panel.add(editButton);
         panel.add(refreshButton);
-        panel.add(reportButton);
+        // panel.add(reportButton);
         
         return panel;
     }
@@ -199,24 +203,24 @@ public class MainFrame extends JFrame {
      * Handler untuk tombol LAPORAN
      * Menampilkan dialog laporan keuangan sederhana
      */
-    private void handleReport() {
-        StringBuilder report = new StringBuilder();
-        report.append("===== LAPORAN KEUANGAN =====\n\n");
-        report.append("Saldo Saat Ini: Rp ").append(String.format("%,.0f", manager.getCurrentBalance())).append("\n");
-        report.append("Total Pemasukan Bulan Ini: Rp ").append(String.format("%,.0f", manager.getMonthlyIncome())).append("\n");
-        report.append("Total Pengeluaran Bulan Ini: Rp ").append(String.format("%,.0f", manager.getMonthlyExpense())).append("\n");
-        report.append("Selisih Bulan Ini: Rp ").append(String.format("%,.0f", manager.getMonthlyBalance())).append("\n\n");
-        report.append("Jumlah Transaksi: ").append(manager.getTransactions().size()).append(" transaksi\n");
+    // private void handleReport() {
+    //     StringBuilder report = new StringBuilder();
+    //     report.append("===== LAPORAN KEUANGAN =====\n\n");
+    //     report.append("Saldo Saat Ini: Rp ").append(String.format("%,.0f", manager.getCurrentBalance())).append("\n");
+    //     report.append("Total Pemasukan Bulan Ini: Rp ").append(String.format("%,.0f", manager.getMonthlyIncome())).append("\n");
+    //     report.append("Total Pengeluaran Bulan Ini: Rp ").append(String.format("%,.0f", manager.getMonthlyExpense())).append("\n");
+    //     report.append("Selisih Bulan Ini: Rp ").append(String.format("%,.0f", manager.getMonthlyBalance())).append("\n\n");
+    //     report.append("Jumlah Transaksi: ").append(manager.getTransactions().size()).append(" transaksi\n");
         
-        JTextArea textArea = new JTextArea(report.toString());
-        textArea.setEditable(false);
-        textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
+    //     JTextArea textArea = new JTextArea(report.toString());
+    //     textArea.setEditable(false);
+    //     textArea.setFont(new Font("Monospaced", Font.PLAIN, 12));
         
-        JOptionPane.showMessageDialog(this, 
-            new JScrollPane(textArea), 
-            "Laporan Keuangan", 
-            JOptionPane.INFORMATION_MESSAGE);
-    }
+    //     JOptionPane.showMessageDialog(this, 
+    //         new JScrollPane(textArea), 
+    //         "Laporan Keuangan", 
+    //         JOptionPane.INFORMATION_MESSAGE);
+    // }
     
     /**
      * Refresh semua komponen view dengan data terbaru
